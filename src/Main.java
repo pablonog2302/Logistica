@@ -21,9 +21,10 @@ public class Main {
                         ======MENU PRINCIPAL=====
                         1| Gerenciamento de clientes
                         2| Gerenciamento de motoristas
+                        3| Gerenciamento de produto
                         0| Sair
                         
-                        Escolha uma opção: 
+                        Escolha uma opção:
                         """);
                 opcao = sc.nextInt();
                 sc.nextLine();
@@ -34,6 +35,9 @@ public class Main {
                         break;
                     case 2:
                         new Motorista().executarMotorista(conexao);
+                        break;
+                    case 3:
+                        new Produto().executarProduto(conexao);
                         break;
                     case 0:
                         System.out.println("Sistema Finalizado!");
