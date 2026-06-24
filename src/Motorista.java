@@ -18,7 +18,7 @@ public class Motorista {
                         2| Listar Motoristas
                         3| Atualizar dados do Motorista
                         4| Deletar Motorista
-                        0| Sair
+                        0| Voltar
                         
                         Escolha uma opção: 
                         """);

@@ -18,7 +18,7 @@ public class Cliente {
                         2| Listar Clientes
                         3| Atualizar dados do Cliente
                         4| Deletar Cliente
-                        0| Sair
+                        0| Voltar
                         
                         Escolha uma opção: 
                         """);
@@ -165,7 +165,7 @@ public class Cliente {
                     System.out.println("Cliente deletado!");
                     break;
                 case 0:
-                    System.out.println("\nGerenciamento de c1lientes concluído!");
+                    System.out.println("\nGerenciamento de clientes concluído!");
                     break;
                 default:
                     System.out.println("Selecione uma opção válida!");

@@ -21,7 +21,8 @@ public class Main {
                         ======MENU PRINCIPAL=====
                         1| Gerenciamento de clientes
                         2| Gerenciamento de motoristas
-                        3| Gerenciamento de produto
+                        3| Gerenciamento de produtos
+                        4| Gerenciamento de pedidos
                         0| Sair
                         
                         Escolha uma opção:
@@ -38,6 +39,9 @@ public class Main {
                         break;
                     case 3:
                         new Produto().executarProduto(conexao);
+                        break;
+                    case 4:
+                        new Pedido().executarPedido(conexao);
                         break;
                     case 0:
                         System.out.println("Sistema Finalizado!");
