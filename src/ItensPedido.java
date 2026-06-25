@@ -36,6 +36,7 @@ public class ItensPedido {
                     double pesoTotal = sc.nextDouble();
                     System.out.print("Digite o ID do Pedido: ");
                     int idPedido = sc.nextInt();
+                    System.out.print("Digite o ID do Produto: ");
                     int idProduto = sc.nextInt();
 
 
