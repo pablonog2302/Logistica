@@ -23,6 +23,7 @@ public class Main {
                         2| Gerenciamento de motoristas
                         3| Gerenciamento de produtos
                         4| Gerenciamento de pedidos
+                        5| Gerenciamento de cargas
                         0| Sair
                         
                         Escolha uma opção:
@@ -42,6 +43,9 @@ public class Main {
                         break;
                     case 4:
                         new Pedido().executarPedido(conexao);
+                        break;
+                    case 5:
+                        new ItensPedido().executarItensPedido(conexao);
                         break;
                     case 0:
                         System.out.println("Sistema Finalizado!");
