@@ -196,7 +196,7 @@ public class Carga {
                             System.out.print("Digite uma nova data: ");
                             String dataTextoUpd2 = sc.nextLine();
                             DateTimeFormatter formatoBrUpd2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                            LocalDate dataUpd2 = LocalDate.parse(dataTextoUpd, formatoBrUpd);
+                            LocalDate dataUpd2 = LocalDate.parse(dataTextoUpd2, formatoBrUpd2);
                             System.out.print("Digite um novo Volume: ");
                             double volumeUpdate2 = sc.nextDouble();
                             System.out.print("Digite um novo Peso: ");
@@ -211,7 +211,7 @@ public class Carga {
                             String update = "UPDATE manifestos_carga SET data_partida = ?, volume_total_ocupado = ?, peso_total_carregado_kg = ?, veiculo_id = ?, motorista_id = ?, pedido_id = ?wwwwww Where id = ?";
 
                             PreparedStatement psUpdate = conexao.prepareStatement(update);
-                            psDataUpdate.setDate(1, java.sql.Date.valueOf(dataUpd2));
+                            psUpdate.setDate(1, java.sql.Date.valueOf(dataUpd2));
                             psUpdate.setDouble(2, volumeUpdate2);
                             psUpdate.setDouble(3, pesoUpdate2);
                             psUpdate.setDouble(4, veiculoUpdate2);
