@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="500.0" prefWidth="950.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VeiculoController">
+    <padding><Insets bottom="15" left="15" right="15" top="15" /></padding>
+    <children>
+        <VBox prefWidth="320.0" spacing="8.0">
+            <children>
+                <Label text="Cadastro de Veículos"><font><Font name="System Bold" size="18.0" /></font></Label>
+
+                <Label text="ID Veículo:" />
+                <TextField fx:id="txtId" editable="false" style="-fx-background-color: #eee;" />
+
+                <Label text="Placa:" />
+                <TextField fx:id="txtPlaca" promptText="Ex: ABC1D23" />
+
+                <Label text="Modelo:" />
+                <TextField fx:id="txtModelo" promptText="Ex: Mercedes-Benz Sprinter" />
+
+                <HBox spacing="10.0">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS" spacing="4.0">
+                            <children>
+                                <Label text="Capac. Peso (kg):" />
+                                <TextField fx:id="txtCapacidadePeso" promptText="3500" />
+                            </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="4.0">
+                            <children>
+                                <Label text="Vol. Máx (m³):" />
+                                <TextField fx:id="txtVolumeMax" promptText="14.5" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <Label text="Dimensões Internas do Baú (m):" style="-fx-font-weight: bold;">
+                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                </Label>
+                <HBox spacing="10.0">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS" spacing="4.0">
+                            <children>
+                                <Label text="Largura:" />
+                                <TextField fx:id="txtLargura" promptText="1.80" />
+                            </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="4.0">
+                            <children>
+                                <Label text="Altura:" />
+                                <TextField fx:id="txtAltura" promptText="2.00" />
+                            </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="4.0">
+                            <children>
+                                <Label text="Comprim.:" />
+                                <TextField fx:id="txtComprimento" promptText="3.30" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button onAction="#cadastrar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Salvar" />
+                        <Button onAction="#atualizar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #FFC107; -fx-text-fill: black;" text="Editar" />
+                        <Button onAction="#deletar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Excluir" />
+                    </children>
+                    <VBox.margin><Insets top="10.0" /></VBox.margin>
+                </HBox>
+
+                <Button onAction="#limparCampos" maxWidth="Infinity" style="-fx-background-color: #757575; -fx-text-fill: white;" text="Limpar Campos" />
+            </children>
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS" spacing="8.0">
+            <children>
+                <Label text="Veículos Cadastrados"><font><Font name="System Bold" size="14.0" /></font></Label>
+                <TableView fx:id="tabela" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                        <TableColumn fx:id="colPlaca" prefWidth="90.0" text="Placa" />
+                        <TableColumn fx:id="colModelo" prefWidth="150.0" text="Modelo" />
+                        <TableColumn fx:id="colPeso" prefWidth="90.0" text="Capac. Peso" />
+                        <TableColumn fx:id="colLargura" prefWidth="70.0" text="Largura" />
+                        <TableColumn fx:id="colAltura" prefWidth="70.0" text="Altura" />
+                        <TableColumn fx:id="colComprimento" prefWidth="80.0" text="Comprim." />
+                        <TableColumn fx:id="colVolume" prefWidth="80.0" text="Vol. Máx" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</HBox>

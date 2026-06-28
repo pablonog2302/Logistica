@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="450.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProdutoController">
+    <padding><Insets bottom="15" left="15" right="15" top="15" /></padding>
+    <children>
+        <VBox prefWidth="300.0" spacing="10.0">
+            <children>
+                <Label text="Cadastro de Produtos"><font><Font name="System Bold" size="18.0" /></font></Label>
+
+                <Label text="ID Produto:" />
+                <TextField fx:id="txtId" editable="false" style="-fx-background-color: #eee;" />
+
+                <Label text="Nome do Produto:" />
+                <TextField fx:id="txtNome" promptText="Ex: Caixa de Componentes X" />
+
+                <HBox spacing="10.0">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS" spacing="5.0">
+                            <children>
+                                <Label text="Largura (m):" />
+                                <TextField fx:id="txtLargura" promptText="0.50" />
+                            </children>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" spacing="5.0">
+                            <children>
+                                <Label text="Altura (m):" />
+                                <TextField fx:id="txtAltura" promptText="1.20" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <Label text="Empilhamento Máximo (Unidades):" />
+                <TextField fx:id="txtEmpilhamento" promptText="Ex: 5" />
+
+                <Label text="Observações:" />
+                <TextArea fx:id="txtObs" prefHeight="80.0" promptText="Detalhes sobre fragilidade, cubagem, etc." wrapText="true" />
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button onAction="#cadastrar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Salvar" />
+                        <Button onAction="#atualizar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #FFC107; -fx-text-fill: black;" text="Editar" />
+                        <Button onAction="#deletar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Excluir" />
+                    </children>
+                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                </HBox>
+                <Button onAction="#limparCampos" maxWidth="Infinity" style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" text="Limpar" />
+            </children>
+        </VBox>
+
+        <TableView fx:id="tabela" HBox.hgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colNome" prefWidth="180.0" text="Nome" />
+                <TableColumn fx:id="colLargura" prefWidth="80.0" text="Largura" />
+                <TableColumn fx:id="colAltura" prefWidth="80.0" text="Altura" />
+                <TableColumn fx:id="colEmpilhamento" prefWidth="100.0" text="Empilhamento" />
+                <TableColumn fx:id="colObs" prefWidth="150.0" text="Obs" />
+            </columns>
+        </TableView>
+    </children>
+</HBox>

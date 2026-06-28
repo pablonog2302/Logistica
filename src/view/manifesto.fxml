@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="450.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManifestoController">
+    <padding><Insets bottom="15" left="15" right="15" top="15" /></padding>
+    <children>
+        <VBox prefWidth="300.0" spacing="10.0">
+            <children>
+                <Label text="Manifesto de Carga"><font><Font name="System Bold" size="18.0" /></font></Label>
+
+                <Label text="ID Manifesto:" />
+                <TextField fx:id="txtId" editable="false" style="-fx-background-color: #eee;" />
+
+                <Label text="Data de Partida (AAAA-MM-DD):" />
+                <TextField fx:id="txtDataPartida" promptText="Ex: 2026-06-10" />
+
+                <Label text="Volume Total Ocupado:" />
+                <TextField fx:id="txtVolume" promptText="Ex: 12" />
+
+                <Label text="Peso Total Carregado (kg):" />
+                <TextField fx:id="txtPeso" promptText="Ex: 1500.50" />
+
+                <Label text="ID Veículo:" />
+                <TextField fx:id="txtVeiculoId" promptText="Ex: 2" />
+
+                <Label text="ID Motorista:" />
+                <TextField fx:id="txtMotoristaId" promptText="Ex: 4" />
+
+                <Label text="ID Pedido:" />
+                <TextField fx:id="txtPedidoId" promptText="Ex: 10" />
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button onAction="#cadastrar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Salvar" />
+                        <Button onAction="#atualizar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #FFC107; -fx-text-fill: black;" text="Editar" />
+                        <Button onAction="#deletar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Excluir" />
+                    </children>
+                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                </HBox>
+                <Button onAction="#limparCampos" maxWidth="Infinity" style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" text="Limpar" />
+            </children>
+        </VBox>
+
+        <TableView fx:id="tabela" HBox.hgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colData" prefWidth="100.0" text="Partida" />
+                <TableColumn fx:id="colVolume" prefWidth="80.0" text="Vol" />
+                <TableColumn fx:id="colPeso" prefWidth="100.0" text="Peso (kg)" />
+                <TableColumn fx:id="colVeiculo" prefWidth="80.0" text="ID Veíc." />
+                <TableColumn fx:id="colMotorista" prefWidth="80.0" text="ID Mot." />
+                <TableColumn fx:id="colPedido" prefWidth="80.0" text="ID Ped." />
+            </columns>
+        </TableView>
+    </children>
+</HBox>

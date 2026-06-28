@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="650.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+    <left>
+        <VBox prefWidth="200.0" spacing="10.0" style="-fx-background-color: #2c3e50; -fx-padding: 20;">
+            <children>
+                <Label text="LOGÍSTICA" textFill="WHITE">
+                    <font><Font name="System Bold" size="24.0" /></font>
+                </Label>
+                <Button maxWidth="Infinity" onAction="#abrirClientes" style="-fx-background-color: #34495e; -fx-text-fill: white;" text="Clientes" />
+                <Button maxWidth="Infinity" onAction="#abrirPedidos" style="-fx-background-color: #34495e; -fx-text-fill: white;" text="Pedidos" />
+                <Button maxWidth="Infinity" onAction="#abrirItens" style="-fx-background-color: #34495e; -fx-text-fill: white;" text="Itens do Pedido" />
+                <Button maxWidth="Infinity" onAction="#abrirManifestos" style="-fx-background-color: #34495e; -fx-text-fill: white;" text="Manifestos de Carga" />
+                <Button maxWidth="Infinity" onAction="#abrirMotoristas" style="-fx-background-color: #34495e; -fx-text-fill: white;" text="Motoristas" />
+                <Button maxWidth="Infinity" onAction="#abrirProdutos" style="-fx-background-color: #34495e; -fx-text-fill: white;" text="Produtos" />
+                <Button maxWidth="Infinity" onAction="#abrirStatus" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-alignment: BASELINE_LEFT;" text="🟢 Status de Entrega" />
+                <Button maxWidth="Infinity" onAction="#abrirVeiculos" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-alignment: BASELINE_LEFT;" text="🚛 Veículos" />
+                <VBox VBox.vgrow="ALWAYS" /> <Button maxWidth="Infinity" onAction="#sair" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Sair" />
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <AnchorPane fx:id="conteudoCentral" style="-fx-background-color: #ecf0f1;"
+                    AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    </center>
+</BorderPane>

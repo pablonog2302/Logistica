@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="500.0" prefWidth="950.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PedidoController">
+    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+    <children>
+        <VBox prefWidth="320.0" spacing="15.0">
+            <children>
+                <Label text="Gerenciar Pedidos"><font><Font name="System Bold" size="20.0" /></font></Label>
+
+                <Label text="ID Pedido:" />
+                <TextField fx:id="txtId" editable="false" style="-fx-background-color: #eee;" />
+
+                <Label text="Data de Emissão (AAAA-MM-DD):" />
+                <TextField fx:id="txtDataEmissao" promptText="Ex: 2026-06-10" />
+
+                <Label text="ID Cliente Remetente:" />
+                <TextField fx:id="txtClienteRemetenteId" promptText="Ex: 1" />
+
+                <Label text="ID Cliente Destinatário:" />
+                <TextField fx:id="txtClienteDestinatarioId" promptText="Ex: 2" />
+
+                <Label text="Status do Pedido:" />
+                <ComboBox fx:id="cbStatus" maxWidth="Infinity" promptText="Selecione o Status..." />
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button onAction="#salvarPedido" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Salvar" />
+                        <Button onAction="#atualizarPedido" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #FFC107; -fx-text-fill: black;" text="Editar" />
+                        <Button onAction="#excluirPedido" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Excluir" />
+                    </children>
+                </HBox>
+                <Button onAction="#limparCampos" maxWidth="Infinity" style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" text="Limpar Campos" />
+            </children>
+        </VBox>
+
+        <TableView fx:id="tabela" HBox.hgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="colDataEmissao" prefWidth="130.0" text="Data Emissão" />
+                <TableColumn fx:id="colClienteRemetente" prefWidth="120.0" text="ID Remetente" />
+                <TableColumn fx:id="colClienteDestinatario" prefWidth="120.0" text="ID Destinatário" />
+                <TableColumn fx:id="colStatusId" prefWidth="120.0" text="Status" />
+            </columns>
+        </TableView>
+    </children>
+</HBox>

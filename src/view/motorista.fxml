@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="450.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MotoristaController">
+    <padding><Insets bottom="15" left="15" right="15" top="15" /></padding>
+    <children>
+        <VBox prefWidth="300.0" spacing="12.0">
+            <children>
+                <Label text="Cadastro de Motoristas"><font><Font name="System Bold" size="18.0" /></font></Label>
+
+                <Label text="ID Motorista:" />
+                <TextField fx:id="txtId" editable="false" style="-fx-background-color: #eee;" />
+
+                <Label text="Nome Completo:" />
+                <TextField fx:id="txtNome" promptText="Ex: João Silva" />
+
+                <Label text="Número da CNH:" />
+                <TextField fx:id="txtCnh" promptText="Ex: 12345678900" />
+
+                <Label text="Categoria CNH:" />
+                <TextField fx:id="txtCategoria" promptText="Ex: C, D, E" />
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button onAction="#cadastrar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Salvar" />
+                        <Button onAction="#atualizar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #FFC107; -fx-text-fill: black;" text="Editar" />
+                        <Button onAction="#deletar" maxWidth="Infinity" HBox.hgrow="ALWAYS" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Excluir" />
+                    </children>
+                    <VBox.margin><Insets top="5.0" /></VBox.margin>
+                </HBox>
+                <Button onAction="#limparCampos" maxWidth="Infinity" style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" text="Limpar" />
+            </children>
+        </VBox>
+
+        <TableView fx:id="tabela" HBox.hgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="colNome" prefWidth="250.0" text="Nome" />
+                <TableColumn fx:id="colCnh" prefWidth="150.0" text="CNH" />
+                <TableColumn fx:id="colCategoria" prefWidth="100.0" text="Categoria" />
+            </columns>
+        </TableView>
+    </children>
+</HBox>
