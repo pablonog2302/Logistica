@@ -13,11 +13,11 @@ public class ItensPedido {
         do {
             System.out.println("""
                         
-                        ====MENU DE CARGA======
-                        1| Cadastrar Carga
-                        2| Listar Cargas
-                        3| Atualizar dados da Carga
-                        4| Deletar Carga
+                        ====MENU DE ITENS E PEDIDOS======
+                        1| Cadastrar Itens e Pedidos
+                        2| Listar Itens e Pedidos
+                        3| Atualizar dados de Itens e Pedidos
+                        4| Deletar Itens e Pedidos
                         0| Voltar
                         
                         Escolha uma opção: 
@@ -28,7 +28,7 @@ public class ItensPedido {
             switch (opcaoC){
                 case 1:
 
-                    System.out.println("\n===Cadastrar Carga===");
+                    System.out.println("\n===Cadastrar Itens e Pedidos===");
 
                     System.out.print("Digite a Quantidade: ");
                     int quantidade = sc.nextInt();
@@ -49,7 +49,7 @@ public class ItensPedido {
                     psInsert.setInt(3, idPedido);
                     psInsert.setInt(4, idProduto);
                     psInsert.executeUpdate();
-                    System.out.println("Carga cadastrada com sucesso!");
+                    System.out.println("Itens e Pedidos cadastrados com sucesso!");
                     break;
                 case 2:
                     String select = "SELECT * FROM itens_pedido";
@@ -57,7 +57,7 @@ public class ItensPedido {
                     ResultSet rs = stat.executeQuery(select);
 
                     System.out.print("""
-                                =====Cargas====
+                                =====Itens e Pedidos====
                                 ID | Quantidade | Peso Total do Produto | Pedido | Produto
                                 """);
                     while(rs.next()) {
@@ -87,7 +87,7 @@ public class ItensPedido {
 
                     switch (opcaoUpd){
                         case 1:
-                            System.out.print("Digite o ID da Carga que deseja atualizar: ");
+                            System.out.print("Digite o ID dos Itens e Pedidos que deseja atualizar: ");
                             int idUpdateQuantidade = sc.nextInt();
                             sc.nextLine();
                             System.out.print("Digite uma nova Quantidade: ");
@@ -102,7 +102,7 @@ public class ItensPedido {
                             System.out.println("Quantidade Atualizada com sucesso!");
                             break;
                         case 2:
-                            System.out.print("Digite o ID da Carga que deseja atualizar: ");
+                            System.out.print("Digite o ID dos Itens e Pedidos que deseja atualizar: ");
                             int idUpdatePeso = sc.nextInt();
                             sc.nextLine();
                             System.out.print("Digite um novo Peso Total: ");
@@ -117,7 +117,7 @@ public class ItensPedido {
                             System.out.println("Peso Total Atualizado com sucesso!");
                             break;
                         case 3:
-                            System.out.print("Digite o ID da Carga que deseja atualizar: ");
+                            System.out.print("Digite o ID dos Itens e Pedidos que deseja atualizar: ");
                             int idUpdatePedido = sc.nextInt();
                             sc.nextLine();
                             System.out.print("Digite o novo Pedido: ");
@@ -132,7 +132,7 @@ public class ItensPedido {
                             System.out.println("Pedido atualizado com sucesso!");
                             break;
                         case 4:
-                            System.out.print("Digite o ID da Carga que deseja atualizar: ");
+                            System.out.print("Digite o ID dos Itens e Pedidos que deseja atualizar: ");
                             int idUpdateProduto = sc.nextInt();
                             sc.nextLine();
                             System.out.print("Digite o novo Produto: ");
@@ -147,7 +147,7 @@ public class ItensPedido {
                             System.out.println("Produto atualizado com sucesso!");
                             break;
                         case 5:
-                            System.out.print("ID da Carga que deseja atualizar: ");
+                            System.out.print("ID dos Itens e Pedidos que deseja atualizar: ");
                             int idUpdate = sc.nextInt();
                             sc.nextLine();
                             System.out.print("Digite uma nova Quantidade: ");
@@ -169,7 +169,7 @@ public class ItensPedido {
                             psUpdate.setInt(4, produtoUpdate2);
                             psUpdate.setInt(5, idUpdate);
                             psUpdate.executeUpdate();
-                            System.out.println("Carga Atualizada com sucesso!");
+                            System.out.println("Itens e Pedidos Atualizados com sucesso!");
                             break;
                         default:
                             System.out.println("Opção Inválida!");
@@ -187,10 +187,10 @@ public class ItensPedido {
                     psDelete.setInt(1, idDelete);
                     psDelete.executeUpdate();
                     System.out.println();
-                    System.out.println("Carga deletada!");
+                    System.out.println("Itens e Pedidos deletados!");
                     break;
                 case 0:
-                    System.out.println("\nGerenciamento de cargas concluído!");
+                    System.out.println("\nGerenciamento de itens e pedidos concluído!");
                     break;
                 default:
                     System.out.println("Selecione uma opção válida!");

@@ -23,7 +23,9 @@ public class Main {
                         2| Gerenciamento de motoristas
                         3| Gerenciamento de produtos
                         4| Gerenciamento de pedidos
-                        5| Gerenciamento de cargas
+                        5| Gerenciamento de itens e pedidos
+                        6| Gerenciamento de veículos
+                        7| Gerenciamento de Cargas
                         0| Sair
                         
                         Escolha uma opção:
@@ -46,6 +48,12 @@ public class Main {
                         break;
                     case 5:
                         new ItensPedido().executarItensPedido(conexao);
+                        break;
+                    case 6:
+                        new Veiculo().executarVeiculo(conexao);
+                        break;
+                    case 7:
+                        new Carga().executarCarga(conexao);
                         break;
                     case 0:
                         System.out.println("Sistema Finalizado!");
